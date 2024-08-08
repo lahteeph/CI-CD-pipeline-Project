@@ -1,21 +1,38 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: kodecamp-app
-  labels:
-    app: kodecamp-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: kodecamp-app
-  template:
-    metadata:
-      labels:
-        app: kodecamp-app
-    spec:
-      containers:
-      - name: kodecamp-app
-        image: kodecamp-app:latest
-        ports:
-          - containerPort: 8080
+{
+  "kind": "Deployment", 
+  "spec": {
+    "replicas": 1, 
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "image": "kodecamp-app:latest", 
+            "name": "kodecamp-app", 
+            "ports": [
+              {
+                "containerPort": 8080
+              }
+            ]
+          }
+        ]
+      }, 
+      "metadata": {
+        "labels": {
+          "app": "kodecamp-app"
+        }
+      }
+    }, 
+    "selector": {
+      "matchLabels": {
+        "app": "kodecamp-app"
+      }
+    }
+  }, 
+  "apiVersion": "apps/v1", 
+  "metadata": {
+    "labels": {
+      "app": "kodecamp-app"
+    }, 
+    "name": "kodecamp-app"
+  }
+}
