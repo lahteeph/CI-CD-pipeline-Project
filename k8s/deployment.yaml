@@ -5,7 +5,7 @@ metadata:
   labels:
     app: kodecamp-app
 spec:
-  replicas: 1 
+  replicas: 1
   selector:
     matchLabels:
       app: kodecamp-app
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: kodecamp-app
-        image: kodecamp-ap:latest
+        image: kodecamp-app:latest
         ports:
         - containerPort: 8080
