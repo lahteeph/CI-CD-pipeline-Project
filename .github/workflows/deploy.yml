@@ -29,11 +29,6 @@ jobs:
           push: true
           tags: lahteeph/kodecamp-app:latest
 
-      - name: Build and Push Docker Image
-        run: |
-          docker build -t lahteeph/kodecamp-app:latest .
-          docker push lahteeph/kodecamp-app:latest
-
       - name: SSH-setup
         uses: webfactory/ssh-agent@v0.5.3
         with:
@@ -41,11 +36,11 @@ jobs:
 
       - name: Minikube Deployment
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
-          kubectl config use-context minikube &&
-          wget https://github.com/lahteeph/containerization/blob/main/k8s/deployment.yaml &&
-          kubectl apply -f deployment.yaml &&
-          wget https://github.com/lahteeph/containerization/blob/main/k8s/service.yaml &&
+          ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} << EOF
+          kubectl config use-context minikube
+          curl -O https://raw.githubusercontent.com/lahteeph/containerization/main/k8s/deployment.yaml
+          kubectl apply -f deployment.yaml
+          curl -O https://raw.githubusercontent.com/lahteeph/containerization/main/k8s/service.yaml
           kubectl apply -f service.yaml
           EOF
 
