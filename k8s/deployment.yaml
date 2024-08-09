@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: kodecamp-app
-        image: kodecamp-web:latest
+        image: kodecamp-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
