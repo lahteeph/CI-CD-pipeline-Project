@@ -61,6 +61,12 @@ Set up a CI/CD pipeline with GitHub Actions to deploy a code (could be the code 
       - In summary, this pipeline automates building, pushing, and deploying a Docker application to a Minikube cluster on an EC2 instance whenever code is pushed to the main branch.
     - see https://docs.github.com/en/actions/using-workflows/about-workflows
     - Note: all variable use in the above deploy.yml should be stored in 
+    - ![Screenshot from 2024-08-09 18-44-10](https://github.com/user-attachments/assets/d405e667-7197-4e3c-b91d-3d5d2a80fb50)
+# verifying:
+  - ![Screenshot from 2024-08-09 18-50-18](https://github.com/user-attachments/assets/13eea103-4bbf-492e-a2a7-61ab28b099f5)
+  - ![Screenshot from 2024-08-09 16-50-31](https://github.com/user-attachments/assets/84cab2bc-9b1d-43ae-a7ec-87b6d22b5e76)
+  - ![Screenshot from 2024-08-09 09-35-37](https://github.com/user-attachments/assets/0bd05c70-a018-430b-845b-e5dc70bbac1a)
 
+    
 
 
